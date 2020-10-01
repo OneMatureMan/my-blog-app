@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render Post List Filters component correctly 1`] = `
+<div>
+  <input
+    className="text-input"
+    onChange={[Function]}
+    placeholder="Search expenses"
+    type="text"
+    value=""
+  />
+  <select
+    className="select"
+    onChange={[Function]}
+    value="date"
+  >
+    <option
+      value="date"
+    >
+      Date
+    </option>
+    <option
+      value="title"
+    >
+      Title
+    </option>
+  </select>
+  <Link
+    replace={false}
+    to="/create"
+  >
+    <button>
+      Add Post
+    </button>
+  </Link>
+</div>
+`;

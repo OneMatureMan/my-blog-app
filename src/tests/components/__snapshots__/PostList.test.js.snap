@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render Post list component with posts 1`] = `
+<div>
+  <h1>
+    THE POSTS!
+  </h1>
+  <PostListItem
+    body="I gotta say, today was a good day."
+    createdAt={100}
+    id="1"
+    title="Picknick Day"
+  />
+  <PostListItem
+    body="Going to the store on a monday equivalent to working out chest on monday at the gym, it is soo crowded in there!!!"
+    createdAt={3000}
+    id="2"
+    title="Going to the Store on Mondays"
+  />
+  <PostListItem
+    body="The mentality of having a mentor is basically based on the ideology of success(NOT)."
+    createdAt={0}
+    id="3"
+    title="Pease get a mentor"
+  />
+</div>
+`;
+
+exports[`Should render Post list component without posts 1`] = `
+<div>
+  <h1>
+    THE POSTS!
+  </h1>
+</div>
+`;

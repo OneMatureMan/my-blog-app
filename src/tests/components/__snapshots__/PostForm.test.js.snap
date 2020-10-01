@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Post form component correctly 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <input
+    autoFocus={true}
+    name="title"
+    onChange={[Function]}
+    placeholder="Title"
+    type="text"
+    value=""
+  />
+  <textarea
+    name="body"
+    onChange={[Function]}
+    placeholder="Enter the blogs body here"
+    value=""
+  />
+  <button>
+    Save Post
+  </button>
+</form>
+`;

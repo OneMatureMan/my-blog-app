@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render Edit post page component correctly 1`] = `
+<div>
+  <PostForm
+    onSubmit={[Function]}
+    post={
+      Object {
+        "body": "I gotta say, today was a good day.",
+        "createdAt": 100,
+        "id": "1",
+        "title": "Picknick Day",
+      }
+    }
+  />
+  <button
+    onClick={[Function]}
+  >
+    Remove Post
+  </button>
+</div>
+`;

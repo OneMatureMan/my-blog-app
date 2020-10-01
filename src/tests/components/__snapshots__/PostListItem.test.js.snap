@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render PostListItem component correctly 1`] = `
+<Link
+  replace={false}
+  to="edit/2"
+>
+  <p>
+    Going to the Store on Mondays
+     - 
+    3000
+  </p>
+</Link>
+`;
