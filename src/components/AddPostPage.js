@@ -1,13 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PostForm from './PostForm';
-import { addPost } from '../actions/posts';
+import { startAddPost } from '../actions/posts';
 
 
 export class AddPostPage extends React.Component {
-
-    onSubmit = (expense) => {
-        this.props.addPost(expense)
+    onSubmit = (post) => {
+        this.props.startAddPost(post)
         this.props.history.push('/dashboard');
     }
 
@@ -22,7 +21,7 @@ export class AddPostPage extends React.Component {
 
 
 const mapDispatchToProps = (dispatch) => ({
-    addPost : (post) => dispatch(addPost(post))
+    startAddPost: (post) => dispatch(startAddPost(post))
 })
 
 export default connect(undefined, mapDispatchToProps)(AddPostPage);

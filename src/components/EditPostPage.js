@@ -1,18 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { editPost, removePost } from '../actions/posts';
+import { startRemovePost, startEditPost } from '../actions/posts';
 import PostForm from './PostForm';
 
 
 export class EditPostPage extends React.Component {
 
     onSubmit = (post) => {
-        this.props.editPost(this.props.post.id,post);
+        this.props.startEditPost(this.props.post.id,post)
         this.props.history.push('/dashboard');
     }
 
     onRemovePost = () => {
-        this.props.removePost({ id: this.props.post.id});
+        this.props.startRemovePost({ id: this.props.post.id});
         this.props.history.push('/dashboard');
     }
 
@@ -36,7 +36,8 @@ const mapStateToProps = (state,props) => ({
 
 const mapDispatchToProps = (dispatch) => ({
     editPost : (id, updates) => dispatch(editPost(id, updates)),
-    removePost: (id) => dispatch(removePost(id))
+    startEditPost : (id, updates) => dispatch(startEditPost(id, updates)),
+    startRemovePost: (id) => dispatch(startRemovePost(id))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(EditPostPage);

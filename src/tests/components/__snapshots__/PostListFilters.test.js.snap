@@ -5,7 +5,7 @@ exports[`Should render Post List Filters component correctly 1`] = `
   <input
     className="text-input"
     onChange={[Function]}
-    placeholder="Search expenses"
+    placeholder="Search posts"
     type="text"
     value=""
   />

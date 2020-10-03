@@ -1,35 +1,30 @@
-import { addPost, editPost, removePost } from '../../actions/posts'
+import { 
+    addPost, 
+    editPost, 
+    removePost, 
+    setPosts,
+    startAddPost,
+    startEditPost,
+    startRemovePost,
+    startSetPosts
+    } from '../../actions/posts'
 import posts from '../fixtures/posts';
-import moment from 'moment';
+import database from '../../firebase/firebase';
 
+beforeEach((done) => {
+    let postsData = {}
+    posts.forEach(({ id, title, body, createdAt }) => {
+        postsData[id] = {title, body, createdAt}
+    })
+    database.ref('posts').set(postsData).then(() => done())
+})
 test('should fire addPost action', () => {
-    const post = {
-        title: 'Flag Back',
-        body: 'Remove all closure',
-        createdAt: moment()
-    }
-    const action = addPost(post);
+    const action = addPost(posts[0]);
     expect(action).toEqual({
         type: 'ADD_POST',
-        post: {
-            ...post,
-            id: expect.any(String)
-        }
+        post: posts[0]
     });
 });
-
-test('should setup add post action if empty', () => {
-    const action = addPost();
-    expect(action).toEqual({
-        type: 'ADD_POST',
-        post: {
-            id: expect.any(String),
-            title: '',
-            body: '',
-            createdAt: moment()
-        }
-    })
-})
 
 
 test('should fire editPost action', () => {
@@ -48,5 +43,15 @@ test('should fire removePost action', () => {
     expect(action).toEqual({
         type: 'REMOVE_POST',
         id: '1'
+    })
+})
+
+test('should fire setPost action', () => {
+    const action = setPosts([posts[0]]);
+    expect(action).toEqual({
+        type: 'SET_POSTS',
+        posts: [
+            posts[0]
+        ]
     })
 })

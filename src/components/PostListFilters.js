@@ -20,7 +20,7 @@ export class PostListFilters extends React.Component {
             <div>
                 <input 
                     className='text-input'
-                    placeholder='Search expenses'
+                    placeholder='Search posts'
                     type="text"
                     value={this.props.filters.text}
                     onChange={this.onTextChange} 

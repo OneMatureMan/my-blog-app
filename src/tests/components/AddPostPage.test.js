@@ -3,12 +3,12 @@ import { shallow } from 'enzyme';
 import { AddPostPage } from '../../components/AddPostPage';
 import posts from '../fixtures/posts';
 
-let addPost, history, wrapper;
+let startAddPost, history, wrapper;
 
 beforeEach(() => {
-    addPost = jest.fn();
+    startAddPost = jest.fn();
     history = { push : jest.fn()};
-    wrapper = shallow(<AddPostPage addPost={addPost} history={history} />)
+    wrapper = shallow(<AddPostPage startAddPost={startAddPost} history={history} />)
 })
 
 test('should load Add post page component correctly', () => {
@@ -17,6 +17,6 @@ test('should load Add post page component correctly', () => {
 
 test('should handle onSubmit correctly', () => {
     wrapper.find('PostForm').prop('onSubmit')(posts[0]);
-    expect(addPost).toHaveBeenLastCalledWith(posts[0]);
+    expect(startAddPost).toHaveBeenLastCalledWith(posts[0]);
     expect(history.push).toHaveBeenLastCalledWith('/dashboard');
 })
