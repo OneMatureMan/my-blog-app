@@ -12,9 +12,18 @@ export class AddPostPage extends React.Component {
 
     render() {
         return (
-            <PostForm 
-                onSubmit={this.onSubmit}
-            />
+            <div>
+                <div className='page-header'>
+                    <div className="content-container">
+                        <h1 className='page-header__title'>Add Post</h1>
+                    </div>  
+                </div>
+                <div className='content-container'>
+                    <PostForm 
+                        onSubmit={this.onSubmit}
+                    />
+                </div>
+            </div>
         );
     };
 };

@@ -33,9 +33,11 @@ class PostForm extends React.Component {
     
     render() {
         return (
-            <form onSubmit={this.onSubmit}>
-                {this.state.error && <p>{this.state.error}</p>}
+            <form className='form' onSubmit={this.onSubmit}>
+                {this.state.error && <p className='form__error'>{this.state.error}</p>}
                 <input 
+                    className='text-input'
+                    style={{width:'70%'}}
                     type="text"
                     name='title'
                     placeholder='Title'
@@ -44,12 +46,24 @@ class PostForm extends React.Component {
                     onChange={this.handleTitleChange}
                 />
                 <textarea
+                    className='textarea'
                     name='body'
                     placeholder='Enter the blogs body here'
                     value= {this.state.body}
                     onChange={this.handleBodyChange}
                 />
-                <button>Save Post</button>
+                <div >
+                    <button style={{marginRight:'5px'}} className='button'>Save Post</button>
+                    {this.props.isEdit && <button 
+                                                className='button button--secondary'
+                                                onClick={this.props.onRemovePost}
+                                            >
+                                                Remove Post
+                                            </button>
+                    }
+                </div>
+                
+                
             </form>
         )
     }

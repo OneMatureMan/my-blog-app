@@ -4,11 +4,23 @@ import PostListItem from './PostListItem';
 import selectPosts from '../selectors/posts';
 
 export const PostList = ({posts}) => (
-    <div>
-        <h1>THE POSTS!</h1>
-        {posts.map((post) => {
-            return <PostListItem key={post.id} {...post} />
-        })}
+    <div className='content-container'>
+        <div className="list-header">
+            <h1>Posts</h1>
+        </div>
+        <div className="list-body">
+            {
+                    posts.length === 0 ? (
+                        <div className="list-item--message">No posts</div>
+                ) : (
+                    posts.map(post => {
+                        return <PostListItem key={post.id} {...post}/>
+                    })
+                )
+            }
+        </div>
+        
+        
     </div>
 )
 

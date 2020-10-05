@@ -19,7 +19,7 @@
   border-top: none;
   color: $dark-grey;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   padding: $s-size;
   text-decoration: none;
   transition: background .3s ease;
@@ -45,13 +45,16 @@
 }
 
 .list-item__title {
-  margin: 0;
+  margin: 10px;
   word-break: break-all;
 }
 
 .list-item__sub-title {
   color: $grey;
   font-size: $font-size-small;
+  margin: 0 -8px -10px 0;
+  align-self: flex-end;
+  font-style: italic;
 }
 
 .list-item__data {

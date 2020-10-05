@@ -1,11 +1,26 @@
 .box-layout {
-  align-items: center;
+  align-items: flex-start;
   background: url('/images/bg.jpg');
   background-size: cover;
   display: flex;
   height: 100vh;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100vw;
+}
+
+.box-layout--read {
+  @extend .box-layout;
+  background: pink;
+  flex-direction: column;
+}
+
+.box-layout--readable-post__title {
+  margin-bottom: 40px;
+}
+
+.box-layout--readable-post {
+  width: 100%;
+  margin: 40px 0 0 40px;
 }
 
 .box-layout__box {

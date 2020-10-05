@@ -30,13 +30,14 @@ class ReadPostPage extends React.Component {
 
 
     render() {
-        console.log(this.state)
         return (
-             <div>
-                 <button style={{color:'red'}}>sherket</button>
-                <h1>{this.state.title}</h1>
-                <p>{this.state.body}</p>
+            <div className='box-layout--read'>
+                <div className="box-layout--readable-post">
+                    <h1 className='box-layout--readable-post__title'>{this.state.title}</h1>
+                    <p>{this.state.body}</p>
+                </div>
             </div>
+            
         )
     }
 } 

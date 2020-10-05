@@ -20,17 +20,28 @@ export class EditPostPage extends React.Component {
     render() {
         return (
             <div>
-                {console.log(this.props.history.location.pathname)}
-                {console.log(this.props.match.params.id)}
-                <Link to={`/read/${this.props.match.params.id}`}>
-                    <p>post readable at: {window.location.href.replace('edit', 'read')}</p>
-                </Link>
-                
-                <PostForm 
-                    onSubmit={this.onSubmit}
-                    post={this.props.post}
-                />
-                <button onClick={this.onRemovePost}>Remove Post</button>
+                <div className='page-header'>
+                    <div className="content-container">
+                        <h1 className='page-header__title'>Edit Post</h1>
+                    </div>  
+                </div>
+                <div className='content-container'>
+                    <p style={{fontStyle:'italic'}}>
+                        post readable at:  &nbsp;
+                        <Link 
+                            className='readable-link'
+                            to={`/read/${this.props.match.params.id}`}
+                        > 
+                            {window.location.href.replace('edit', 'read')}
+                        </Link>
+                    </p>
+                    <PostForm 
+                        onSubmit={this.onSubmit}
+                        post={this.props.post}
+                        isEdit={true}
+                        onRemovePost={this.onRemovePost}
+                    />
+                </div>
             </div>
         );
     };
