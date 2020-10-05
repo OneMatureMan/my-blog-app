@@ -58,10 +58,27 @@ export const setPosts = (posts) => ({
     posts
 })
 
+// export const startGetPost = (id) => {
+//     return () => {
+//         let prop;
+//         return firebase.ref('users').once('value').then(users => {
+//             users.forEach(user => {
+//               user.child('posts').forEach(post => {
+//                   if (post.key === id) {
+//                     prop = (post.val())
+//                   }
+//               })
+//             })
+//         })
+//     }
+// }
+
+
 export const startSetPosts = () => {
     return (dispatch, getState) => {
         let posts = []
         const uid = getState().auth.uid
+        
         return firebase.ref(`users/${uid}/posts`).once('value', snapshots => {
             snapshots.forEach(snapshot => {
                 posts.push({
